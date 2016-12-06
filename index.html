@@ -1,30 +1,11 @@
-Using Git integration inside StormRunner
-
-The nature of Git that it enables users to fall back to certain points to recover from corrupted updates makes Git popular among coders who work in collaboration. For StormRunner load test, the integration with Git enables you to manage the scripts from your Git repository more efficiently, including upload and synchronize scripts.  
-StormRunner Git Agent is introduced to connect your script repository to your StormRunner tenant. Using StormRunner Git Agent, you can upload scripts to StormRunner load tests. If the scripts had been updated in repository, you can synchronize the corresponding altered ones. Find out how to install and configure the StormRunner Git Agent.
-We use an example here to demonstrate how the Git integration simplifies your script management in StormRunner. 
- 
-The git repository contains various protocols of script supported by StormRunner Load Test. Including .Net, Java HTTP TrueClient, Flex, Gatling, Jmeter, Mobile Http, Web Http, TrueApi, Web Service etc. More about StormRunner Load Test Supported protocols.
-1.	Configure StormRunner Git Agent. Provide tenant information and server, proxy settings, besides entering information for the repository o you are going to work:
-•	Click Retrieve to get branches from the repository.
-
- 
-
-•	If the agent is connected, the status will be shown. And Upload from Git option for scripts will be enabled.
- 
-2.	Choose Upload from Git. Click Add to upload scripts via selected Git Agent.
- 
-3.	Sync selected script 
-Taking the script ‘DotNet1’ which belongs to LoadRunner .Net protocol in the repository as an example. We will modify it using LoadRunner Vugen and then sync it from StormRunner Load Test.  More about Git Options in LoadRunner
-•	Start Vugen, go to Version Control -> Git Options -> Import from remote repository. It will clone the remote repository to the local path.
- 
-•	Start ‘DotNet1’ project from local repository and modify the script as you wanted. Save the changes locally and then committed to remote repository.
- 
-•	Then push the changes to remote repository. The modified time difference suggests that the .Net script has been updated in the repository.
- 
-•	Now to synchronize ‘DotNet1’ script in StormRunner Load Test. Keep the Git Agent you used to upload scripts connected, choose Sync Selected to pull the latest script.
-
- 
-•	After syncing, ‘DotNet1’ script has been updated accordingly to the remote repository in StormRunner.
- 
-
+---
+　　layout: default
+　　title: StormRunner Dev Blogs
+　　---
+　　<h2>{{ page.title }}</h2>
+　　<p>最新文章</p>
+　　<ul>
+　　　　{% for post in site.posts %}
+　　　　　　<li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+　　　　{% endfor %}
+　　</ul>
